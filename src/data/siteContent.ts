@@ -20,10 +20,10 @@ export const nav = {
 
 export const hero = {
   eyebrow: 'AI-POWERED BUSINESS INFRASTRUCTURE',
-  headline: ['UNIFY DATA.', 'AUTOMATE WORK.', 'MAKE AI USEFUL.'],
-  gradientPhrase: 'MAKE AI USEFUL.',
+  headline: ['MESSY SYSTEMS.', 'MANUAL WORKAROUNDS.', 'NOT ANYMORE.'],
+  gradientPhrase: 'NOT ANYMORE.',
   subtext:
-    'Whether your business runs on Salesforce and QuickBooks or nothing at all, 6A Logic meets you where you are. We connect and AI-enable what you have, or build and host your entire software stack from scratch. Either way, you get a clean data foundation and an AI layer that actually works.',
+    'Your business runs on disconnected software, manual spreadsheets, and reports no one fully trusts. 6A Logic cleans up your systems, connects your data, automates the repetitive work, and gets your operations ready for AI — whether you have five tools already or none at all.',
   primaryCta: 'Book a Consultation',
   secondaryCta: 'See What We Build',
   pills: [
@@ -84,23 +84,23 @@ export const aiUrgency = {
 
 export const businessSuite = {
   eyebrow: 'BUSINESS SUITE',
-  headline: 'YOUR FULL BUSINESS STACK. HOSTED. AI-READY. YOURS.',
+  headline: 'THE TOOLS YOUR BUSINESS NEEDS. SET UP AND RUNNING FROM DAY ONE.',
   subtext:
-    'Most SMBs are either overpaying for enterprise SaaS or running on spreadsheets and guesswork. We give you a third option: battle-tested open-source business tools, hosted on your own private portal, configured for your workflows, and wired for AI from day one.',
+    'Most growing businesses are either overpaying for software they barely use, or making do with spreadsheets and workarounds. We give you a third option: a complete, integrated business stack — CRM, accounting, project management, analytics, and more — set up and configured for how your business actually works, at a price that makes sense.',
   tracks: [
     {
       label: 'NO EXISTING TOOLS',
       badge: 'Start fresh',
       title: 'We build your full stack',
       description:
-        'We select, configure, and host the right open-source tools for your business: CRM, accounting, project management, transcription, analytics, and more. All of it runs on a branded AWS-hosted portal you own and control.',
+        'We select, set up, and manage the right tools for your business: CRM, accounting, project management, transcription, analytics, and more. Everything runs in one place, configured for your workflows, so your team logs in and gets to work.',
     },
     {
       label: 'HAVE EXISTING TOOLS',
       badge: 'Keep what works',
       title: 'We connect and unify them',
       description:
-        'Already running Salesforce, QuickBooks, or MS 365? We integrate your existing stack, normalize the data, build the MCP layer, and put an AI interface on top. No rip-and-replace required.',
+        'Already running Salesforce, QuickBooks, or MS 365? We connect your existing tools, clean up the data, and make everything work together. Your team keeps using the software they know. Everything just finally agrees.',
     },
   ],
   tools: [
@@ -155,7 +155,7 @@ export const businessSuite = {
     ],
   },
   costNote:
-    'Salesforce: $150+/user/month. HubSpot: $800+/month. QuickBooks: $200/month. We give you equivalent capability through open-source tools we host and manage, at a fraction of the cost, with no vendor lock-in.',
+    'Salesforce: $150+/user/month. HubSpot: $800+/month. QuickBooks: $200/month. We set up and manage tools that do the same job, at a fraction of the cost. No vendor lock-in. No bloated feature sets you will never use.',
 }
 
 export const problem = {
@@ -251,14 +251,14 @@ export const services = [
     id: 'business-suite',
     icon: '▦',
     title: 'Business Suite',
-    tagline: 'Your full stack. Hosted. Owned.',
+    tagline: 'The tools you need. None of the complexity.',
     description:
-      "For businesses that need the right tools but can't justify enterprise SaaS pricing. We host open-source CRM, accounting, analytics, project management, and transcription on a private AWS portal, configured, integrated, and AI-ready from day one.",
+      "For businesses that are overpaying for software they don't fully use, or still held together by spreadsheets. We set up and manage a complete, integrated business stack — configured for your workflows, connected to each other, and ready to grow with you.",
     features: [
-      'Open-source tool selection & setup',
-      'Private AWS-hosted portal',
-      'Custom configuration per business',
-      'AI assistant layer included',
+      'CRM, accounting, analytics & more — fully set up',
+      'One login, every tool, all your data in one place',
+      'Configured around your workflows, not generic defaults',
+      'AI that can answer questions from your actual business data',
     ],
   },
   {
@@ -266,14 +266,14 @@ export const services = [
     id: 'system-integration',
     icon: '⇄',
     title: 'System Integration',
-    tagline: 'Already have tools? We unify them.',
+    tagline: 'Your tools disagree. We fix that.',
     description:
-      'Connect Salesforce, QuickBooks, MS 365, and any other platform into a single reliable data layer. We normalize records, resolve conflicts, build sync logic, and give your team one version of the truth.',
+      'If your CRM, accounting software, and spreadsheets are telling three different stories, that is the problem we solve. We connect your existing platforms, clean up the data, and build reliable sync so your team works from one version of the truth — not the latest manual export.',
     features: [
-      'CRM + accounting sync',
-      'Record normalization & deduplication',
-      'Cross-platform workflow automation',
-      'Audit logging & error monitoring',
+      'CRM, accounting & ops data that finally agree',
+      'Duplicate records resolved, one source of truth',
+      'Manual handoffs replaced with automatic triggers',
+      'Alerts and visibility when something breaks',
     ],
   },
   {
@@ -281,14 +281,14 @@ export const services = [
     id: 'ai-infrastructure',
     icon: '◈',
     title: 'MCP & AI Infrastructure',
-    tagline: 'Make your systems AI-accessible.',
+    tagline: 'AI that works with your real data.',
     description:
-      "We build and host MCP servers that give AI tools safe, permissioned access to your business data. Whether it's tying a few APIs together or fully hosting your AI infrastructure, your AI agents get real context, not hallucinations.",
+      "Most AI tools fail in real business environments because they have no reliable access to your actual data. We build the connection layer that gives your AI tools accurate, permissioned access to your CRM, invoices, pipeline, and operations — so you get real answers instead of confident guesses.",
     features: [
-      'API-to-MCP conversion',
-      'Hosted or self-hosted MCP servers',
-      'Permissioned tool definitions',
-      'AI agent integration & testing',
+      'Your existing tools connected to AI — nothing replaced',
+      'We manage the infrastructure, your team manages the work',
+      'AI only accesses what it is supposed to',
+      'Tested against your real data before going live',
     ],
   },
   {
@@ -296,14 +296,14 @@ export const services = [
     id: 'workflow-automation',
     icon: '⟳',
     title: 'Workflow Automation',
-    tagline: 'Replace manual work with logic.',
+    tagline: 'Stop doing the same thing twice.',
     description:
-      'From quote-to-cash and invoice reconciliation to onboarding and approvals, we automate the repetitive processes draining your team using n8n, custom workers, or direct API integrations.',
+      'We identify the repetitive steps your team handles manually — copying data between tools, routing approvals, reconciling invoices, sending follow-ups — and replace them with reliable automated logic. Your team stops doing the same thing twice and focuses on work that actually moves the business forward.',
     features: [
-      'Cross-system automation design',
-      'Custom workflow logic & routing',
-      'Error handling & alerting',
-      'Internal dashboards & admin tools',
+      'Workflows designed around how your business actually runs',
+      'Approvals, notifications and conditional routing',
+      'Alerts when something needs a human decision',
+      'Dashboards that show what is running and what is not',
     ],
   },
 ]
@@ -386,19 +386,19 @@ export const useCases = [
 export const aiInfrastructure = {
   headline: 'WRAP YOUR EXISTING STACK IN AI. NOTHING GETS REPLACED.',
   subtext:
-    'You don\'t need to replace Salesforce, QuickBooks, or your ERP. 6A Logic adds a permissioned AI-accessible layer on top of the tools you already run, so your AI tools can read, reason, and act on real business data from day one.',
+    'You do not need to replace Salesforce, QuickBooks, or any other tool your team depends on. We build the connection between your existing systems and your AI tools, so the AI has real, accurate business context to work from — not a best guess based on outdated training data.',
   wrapNote:
     'Your existing systems stay. We add the layer that makes them AI-ready.',
   capabilities: [
-    'MCP server development',
-    'Hosted tool access',
-    'Permissioned data retrieval',
-    'API wrappers for internal systems',
-    'AI-readable business context',
-    'Human-in-the-loop workflow design',
-    'Auditability and logging',
-    'Secure credential handling',
-    'Structured data pipelines',
+    'AI answers from your real business data, not guesses',
+    'Your existing tools stay — nothing gets replaced',
+    'Access controls so AI only touches approved systems',
+    'Human review before AI takes action on anything critical',
+    'Full audit trail of what was accessed and when',
+    'Works with the tools your team already uses daily',
+    'Data cleaned and structured before AI touches it',
+    'Tested against your actual data before going live',
+    'Scales as you add more tools and workflows',
   ],
   layers: [
     { label: 'INPUTS', items: ['Salesforce', 'QuickBooks', 'Excel', 'PostgreSQL', 'ERPs'] },
@@ -436,7 +436,7 @@ export const features = [
 ]
 
 export const whySixALogic = {
-  headline: 'PRACTICAL INFRASTRUCTURE. NOT AI THEATER.',
+  headline: 'PRACTICAL RESULTS. NOT AI THEATER.',
   differentiators: [
     {
       title: 'We meet you where you are',
@@ -456,11 +456,11 @@ export const whySixALogic = {
     },
     {
       title: 'Data quality before AI',
-      description: 'We fix the foundation before connecting AI tools. AI on dirty, fragmented data is still a problem.',
+      description: 'We clean up the foundation before connecting AI tools. AI on dirty, fragmented data is still a mess — just a faster one.',
     },
     {
-      title: 'Measurable operational leverage',
-      description: "Every engagement targets concrete outcomes: hours saved, records fixed, workflows automated, tools replaced.",
+      title: 'Concrete outcomes, not deliverables',
+      description: "Every engagement targets results you can measure: hours saved per week, records cleaned up, manual steps eliminated, workflows running automatically.",
     },
   ],
 }

@@ -59,10 +59,10 @@ export function ServicesSection() {
             className="font-display font-black uppercase tracking-tighter text-white mb-4"
             style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', lineHeight: 1.05 }}
           >
-            Four Ways We Work With You
+            Four Problems We Solve
           </h2>
           <p className="text-brand-textSecondary leading-relaxed">
-            Every engagement maps to one or more of these service areas, sometimes all four.
+            Every engagement starts with a real operational problem. Most clients end up solving more than one.
           </p>
         </motion.div>
 
