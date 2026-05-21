@@ -62,7 +62,7 @@ export function ServicesSection() {
             Four Ways We Work With You
           </h2>
           <p className="text-brand-textSecondary leading-relaxed">
-            Every engagement maps to one or more of these service areas — sometimes all four.
+            Every engagement maps to one or more of these service areas, sometimes all four.
           </p>
         </motion.div>
 

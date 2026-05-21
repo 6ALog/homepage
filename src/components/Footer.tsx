@@ -40,7 +40,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-10 lg:gap-16 mb-12">
             {/* Brand */}
             <div>
-              <a href="#" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic — home">
+              <a href="#" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic home">
                 <span className="font-display font-black text-2xl tracking-tight">
                   <span className="text-gradient-cyan">6A</span>
                   <span className="text-white"> Logic</span>

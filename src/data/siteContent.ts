@@ -23,7 +23,7 @@ export const hero = {
   headline: ['UNIFY DATA.', 'AUTOMATE WORK.', 'MAKE AI USEFUL.'],
   gradientPhrase: 'MAKE AI USEFUL.',
   subtext:
-    'Whether your business runs on Salesforce and QuickBooks or nothing at all — 6A Logic meets you where you are. We connect and AI-enable what you have, or build and host your entire software stack from scratch. Either way, you get a clean data foundation and an AI layer that actually works.',
+    'Whether your business runs on Salesforce and QuickBooks or nothing at all, 6A Logic meets you where you are. We connect and AI-enable what you have, or build and host your entire software stack from scratch. Either way, you get a clean data foundation and an AI layer that actually works.',
   primaryCta: 'Book a Consultation',
   secondaryCta: 'See What We Build',
   pills: [
@@ -53,7 +53,7 @@ export const aiUrgency = {
   eyebrow: 'THE 2026 REALITY',
   headline: 'IN 2026, AI IS NO LONGER A STRATEGY. IT\'S AN EXPECTATION.',
   subtext:
-    'Every company in your market has committed to AI. The ones pulling ahead aren\'t the ones with the most AI tools — they\'re the ones who built the data foundation underneath them first.',
+    'Every company in your market has committed to AI. The ones pulling ahead are not the ones with the most AI tools. They are the ones who built the data foundation underneath them first.',
   divider:
     'The question is no longer whether your business will use AI. It\'s whether your systems are ready for it.',
   stats: [
@@ -75,7 +75,7 @@ export const aiUrgency = {
     {
       value: '#1',
       label: 'bottleneck in AI adoption',
-      note: 'is never the model — it\'s the data behind it',
+      note: 'the model is never the problem. the data is.',
     },
   ],
   callout:
@@ -93,14 +93,14 @@ export const businessSuite = {
       badge: 'Start fresh',
       title: 'We build your full stack',
       description:
-        'We select, configure, and host the right open-source tools for your business — CRM, accounting, project management, transcription, analytics, and more — on a branded AWS-hosted portal you own and control.',
+        'We select, configure, and host the right open-source tools for your business: CRM, accounting, project management, transcription, analytics, and more. All of it runs on a branded AWS-hosted portal you own and control.',
     },
     {
       label: 'HAVE EXISTING TOOLS',
       badge: 'Keep what works',
       title: 'We connect and unify them',
       description:
-        'Already running Salesforce, QuickBooks, or MS 365? We integrate your existing stack, normalize the data, build the MCP layer, and put an AI interface on top — no rip-and-replace required.',
+        'Already running Salesforce, QuickBooks, or MS 365? We integrate your existing stack, normalize the data, build the MCP layer, and put an AI interface on top. No rip-and-replace required.',
     },
   ],
   tools: [
@@ -144,7 +144,7 @@ export const businessSuite = {
   portal: {
     headline: 'One portal. Every tool. Fully yours.',
     description:
-      'Every client gets a dedicated, AWS-hosted portal. Log in to access your tools, your data, and your AI assistant — all in one place, branded to your business, owned by you.',
+      'Every client gets a dedicated, AWS-hosted portal. Log in to access your tools, your data, and your AI assistant. Everything in one place, branded to your business, owned by you.',
     features: [
       'Per-company AWS hosting',
       'Branded login portal',
@@ -155,7 +155,7 @@ export const businessSuite = {
     ],
   },
   costNote:
-    'Salesforce: $150+/user/month. HubSpot: $800+/month. QuickBooks: $200/month. We give you equivalent capability through open-source tools we host and manage — at a fraction of the cost, with no vendor lock-in.',
+    'Salesforce: $150+/user/month. HubSpot: $800+/month. QuickBooks: $200/month. We give you equivalent capability through open-source tools we host and manage, at a fraction of the cost, with no vendor lock-in.',
 }
 
 export const problem = {
@@ -197,7 +197,7 @@ export const problem = {
       label: 'FAILURE MODE 06',
       title: 'AI Tools With No Safe Access to Real Business Context',
       description:
-        'You want AI to help — but it cannot access your actual data, or it cannot be trusted when it does.',
+        'You want AI to help, but it cannot access your actual data, or it cannot be trusted when it does.',
     },
   ],
 }
@@ -253,7 +253,7 @@ export const services = [
     title: 'Business Suite',
     tagline: 'Your full stack. Hosted. Owned.',
     description:
-      "For businesses that need the right tools but can't justify enterprise SaaS pricing. We host open-source CRM, accounting, analytics, project management, and transcription on a private AWS portal — configured, integrated, and AI-ready from day one.",
+      "For businesses that need the right tools but can't justify enterprise SaaS pricing. We host open-source CRM, accounting, analytics, project management, and transcription on a private AWS portal, configured, integrated, and AI-ready from day one.",
     features: [
       'Open-source tool selection & setup',
       'Private AWS-hosted portal',
@@ -283,7 +283,7 @@ export const services = [
     title: 'MCP & AI Infrastructure',
     tagline: 'Make your systems AI-accessible.',
     description:
-      "We build and host MCP servers that give AI tools safe, permissioned access to your business data. Whether it's tying a few APIs together or fully hosting your AI infrastructure — your AI agents get real context, not hallucinations.",
+      "We build and host MCP servers that give AI tools safe, permissioned access to your business data. Whether it's tying a few APIs together or fully hosting your AI infrastructure, your AI agents get real context, not hallucinations.",
     features: [
       'API-to-MCP conversion',
       'Hosted or self-hosted MCP servers',
@@ -298,7 +298,7 @@ export const services = [
     title: 'Workflow Automation',
     tagline: 'Replace manual work with logic.',
     description:
-      'From quote-to-cash and invoice reconciliation to onboarding and approvals — we automate the repetitive processes draining your team using n8n, custom workers, or direct API integrations.',
+      'From quote-to-cash and invoice reconciliation to onboarding and approvals, we automate the repetitive processes draining your team using n8n, custom workers, or direct API integrations.',
     features: [
       'Cross-system automation design',
       'Custom workflow logic & routing',
@@ -349,7 +349,7 @@ export const useCases = [
   {
     label: 'USE CASE 02',
     title: 'Customer & Vendor Record Matching',
-    problem: 'The same entity appears under multiple IDs across CRM, ERP, and accounting — creating duplicate work and incorrect totals.',
+    problem: 'The same entity appears under multiple IDs across CRM, ERP, and accounting, creating duplicate work and incorrect totals.',
     build: 'Deduplication pipelines, canonical ID assignment, merge rules, and audit logs.',
     result: 'Single source of truth for every entity, with a clear trail of what changed.',
   },
@@ -363,7 +363,7 @@ export const useCases = [
   {
     label: 'USE CASE 04',
     title: 'Quote-to-Cash Automation',
-    problem: 'Sales creates quotes in one tool, operations fulfills in another, and finance invoices from a third — with manual handoffs at every step.',
+    problem: 'Sales creates quotes in one tool, operations fulfills in another, and finance invoices from a third, with manual handoffs at every step.',
     build: 'End-to-end workflow automation connecting CRM, operations, and accounting with status tracking.',
     result: 'Faster revenue recognition, fewer dropped handoffs, and clear deal status across teams.',
   },
@@ -377,16 +377,16 @@ export const useCases = [
   {
     label: 'USE CASE 06',
     title: 'AI Assistant Connected to Business Systems',
-    problem: "You want AI to answer questions about your business — but it doesn't have safe, accurate access to your actual data.",
+    problem: "You want AI to answer questions about your business, but it doesn't have safe, accurate access to your actual data.",
     build: 'MCP server with permissioned read/write tool definitions, data normalization, and audit logging.',
     result: 'AI that can retrieve real context, respect permissions, and trigger approved workflows.',
   },
 ]
 
 export const aiInfrastructure = {
-  headline: 'WRAP YOUR EXISTING STACK IN AI — WITHOUT REPLACING A THING.',
+  headline: 'WRAP YOUR EXISTING STACK IN AI. NOTHING GETS REPLACED.',
   subtext:
-    'You don\'t need to replace Salesforce, QuickBooks, or your ERP. 6A Logic adds a permissioned AI-accessible layer on top of the tools you already run — so your AI tools can read, reason, and act on real business data from day one.',
+    'You don\'t need to replace Salesforce, QuickBooks, or your ERP. 6A Logic adds a permissioned AI-accessible layer on top of the tools you already run, so your AI tools can read, reason, and act on real business data from day one.',
   wrapNote:
     'Your existing systems stay. We add the layer that makes them AI-ready.',
   capabilities: [
@@ -419,19 +419,19 @@ export const features = [
     tag: 'FEATURE 02',
     title: 'Automations that match how your business actually works',
     description:
-      'Replace manual handoffs and fragile spreadsheets with workflows designed around real operational logic — not generic templates.',
+      'Replace manual handoffs and fragile spreadsheets with workflows designed around real operational logic, not generic templates.',
   },
   {
     tag: 'FEATURE 03',
     title: 'AI access without chaos',
     description:
-      'Give AI tools controlled, permissioned access to the systems and data they need — with audit logs, rate limits, and human review gates.',
+      'Give AI tools controlled, permissioned access to the systems and data they need, with audit logs, rate limits, and human review gates.',
   },
   {
     tag: 'FEATURE 04',
     title: 'Custom tools instead of generic workarounds',
     description:
-      'Build focused dashboards, portals, and internal apps around your exact processes — not features you will never use.',
+      'Build focused dashboards, portals, and internal apps around your exact processes, not features you will never use.',
   },
 ]
 
@@ -452,15 +452,15 @@ export const whySixALogic = {
     },
     {
       title: 'Business-process-first engineering',
-      description: 'We start with how your business actually operates — not what a SaaS template assumes it does.',
+      description: 'We start with how your business actually operates, not what a SaaS template assumes it does.',
     },
     {
       title: 'Data quality before AI',
-      description: 'We fix the foundation before connecting AI tools — because AI on dirty, fragmented data is still a problem.',
+      description: 'We fix the foundation before connecting AI tools. AI on dirty, fragmented data is still a problem.',
     },
     {
       title: 'Measurable operational leverage',
-      description: "Every engagement targets concrete outcomes — hours saved, records fixed, workflows automated, tools replaced.",
+      description: "Every engagement targets concrete outcomes: hours saved, records fixed, workflows automated, tools replaced.",
     },
   ],
 }
@@ -482,7 +482,7 @@ export const systems = {
 export const ctaBanner = {
   headline: 'MISSING TOOLS, DISCONNECTED SYSTEMS, OR NOT SURE WHERE TO START?',
   subtext:
-    'Whether you need a full hosted business suite or just want to unify what you already have — 6A Logic can map the problem, design the right solution, and build it.',
+    'Whether you need a full hosted business suite or just want to unify what you already have, 6A Logic can map the problem, design the right solution, and build it.',
   primaryCta: 'Book a Consultation',
   secondaryCta: 'Describe Your Setup',
 }
@@ -490,7 +490,7 @@ export const ctaBanner = {
 export const finalCta = {
   headline: 'YOUR COMPETITORS ARE BUILDING AI INTO THEIR OPERATIONS. IS YOUR DATA LAYER READY?',
   subtext:
-    'Every week without a connected data foundation is a week your competitors pull further ahead. 6A Logic builds the layer that makes AI real — not theoretical.',
+    'Every week without a connected data foundation is a week your competitors pull further ahead. 6A Logic builds the layer that makes AI real, not theoretical.',
   primaryCta: 'Book a Consultation',
   secondaryCta: 'Contact 6A Logic',
 }

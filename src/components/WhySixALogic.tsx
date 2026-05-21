@@ -40,8 +40,8 @@ export function WhySixALogic() {
               </p>
               <p className="font-mono text-sm text-brand-textDim leading-relaxed">
                 // If your team spends time copying between systems,
-                <br />// reconciling spreadsheets, or explaining why reports don't match
-                <br />// — that is the problem we fix.
+                <br />// reconciling spreadsheets, or explaining why reports don't match,
+                <br />// that is the problem we fix.
               </p>
               <p className="font-mono text-sm text-brand-cyan leading-relaxed">
                 // Clean data. Reliable sync. Useful automation.

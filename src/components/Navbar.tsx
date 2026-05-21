@@ -142,7 +142,7 @@ export function Navbar() {
           <a
             href="#"
             className="font-display font-black text-xl lg:text-2xl tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
-            aria-label="6A Logic — home"
+            aria-label="6A Logic home"
           >
             <span className="text-gradient-cyan">6A</span>
             <span className="text-white"> Logic</span>

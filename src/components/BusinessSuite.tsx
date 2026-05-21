@@ -109,7 +109,7 @@ function PortalMockup() {
         {/* Main panel */}
         <div className="flex-1 p-5">
           <div className="flex items-center justify-between mb-4">
-            <span className="font-mono text-xs text-brand-textDim tracking-wider uppercase">CRM — Pipeline</span>
+            <span className="font-mono text-xs text-brand-textDim tracking-wider uppercase">CRM / Pipeline</span>
             <div className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping-slow" />
               <span className="font-mono text-xs text-brand-cyan">LIVE</span>
