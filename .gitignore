@@ -30,3 +30,6 @@ pnpm-debug.log*
 .cache/
 .parcel-cache/
 .eslintcache
+
+# Claude / AI tooling
+.claude/
