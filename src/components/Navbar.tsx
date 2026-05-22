@@ -145,9 +145,9 @@ export function Navbar() {
             aria-label="6A Logic home"
           >
             <img
-              src="/logo-lockup-horizontal.png"
+              src="/logo-mark.png"
               alt="6A Logic"
-              className="h-8 lg:h-9 w-auto"
+              className="h-[60px] lg:h-[72px] w-auto"
             />
           </a>
 
