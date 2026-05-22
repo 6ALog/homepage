@@ -8,20 +8,28 @@ export default {
     extend: {
       colors: {
         brand: {
+          // Surfaces
           bg:            '#030712',
           bgMid:         '#070B14',
           bgLight:       '#0B1020',
           bgCard:        '#151C2E',
+          paper:         '#F6F8FB',
+          // Accents
           cyan:          '#38BDF8',
+          accent:        '#67E8F9',
           sky:           '#0EA5E9',
           blue:          '#2563EB',
           indigo:        '#818CF8',
+          // Text
           textPrimary:   '#F8FAFC',
           textSecondary: '#CBD5E1',
           textMuted:     '#94A3B8',
           textDim:       '#64748B',
           textDimmer:    '#475569',
-          accent:        '#67E8F9',
+          // Semantic
+          success:       '#22D3A7',
+          warn:          '#FCD34D',
+          error:         '#F87171',
         },
       },
       fontFamily: {
@@ -34,8 +42,14 @@ export default {
         '9xl':  ['8rem',  { lineHeight: '0.9' }],
       },
       backgroundImage: {
-        'brand-gradient': 'linear-gradient(45deg, #030712 0%, #0B1020 45%, #061827 100%)',
-        'text-gradient':  'linear-gradient(to bottom, #FFFFFF 20%, #38BDF8 70%, #2563EB 100%)',
+        // Signature brand gradient: cyan → blue (mark, CTAs, key headings)
+        'brand-gradient': 'linear-gradient(135deg, #67E8F9 0%, #38BDF8 50%, #2563EB 100%)',
+        'brand-halo':     'linear-gradient(135deg, #38BDF8 0%, #818CF8 100%)',
+        // Text gradients
+        'text-gradient':  'linear-gradient(180deg, #FFFFFF 20%, #38BDF8 70%, #2563EB 100%)',
+        // Grid overlay pattern
+        'grid-overlay':
+          'linear-gradient(rgba(56,189,248,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.07) 1px, transparent 1px)',
       },
       animation: {
         'spin-slow':     'spin 12s linear infinite',

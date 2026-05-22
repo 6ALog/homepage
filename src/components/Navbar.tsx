@@ -141,11 +141,14 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="#"
-            className="font-display font-black text-xl lg:text-2xl tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
+            className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
             aria-label="6A Logic home"
           >
-            <span className="text-gradient-cyan">6A</span>
-            <span className="text-white"> Logic</span>
+            <img
+              src="/logo-lockup-horizontal.png"
+              alt="6A Logic"
+              className="h-8 lg:h-9 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}

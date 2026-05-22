@@ -41,10 +41,11 @@ export function Footer() {
             {/* Brand */}
             <div>
               <a href="#" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic home">
-                <span className="font-display font-black text-2xl tracking-tight">
-                  <span className="text-gradient-cyan">6A</span>
-                  <span className="text-white"> Logic</span>
-                </span>
+                <img
+                  src="/logo-lockup-horizontal.png"
+                  alt="6A Logic"
+                  className="h-8 w-auto"
+                />
               </a>
               <p className="text-brand-textDim text-sm leading-relaxed max-w-xs mb-6">
                 {footer.description}

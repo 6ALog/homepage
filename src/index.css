@@ -2,6 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── 6A Logic brand tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand spine */
+  --brand-cyan:   #38BDF8;
+  --brand-accent: #67E8F9;
+  --brand-sky:    #0EA5E9;
+  --brand-blue:   #2563EB;
+  --brand-indigo: #818CF8;
+
+  /* Dark surfaces */
+  --bg:        #030712;
+  --bg-mid:    #070B14;
+  --bg-light:  #0B1020;
+  --bg-card:   #151C2E;
+
+  /* Light surfaces */
+  --paper:      #F6F8FB;
+  --paper-warm: #FFFFFF;
+
+  /* Text */
+  --text:        #F8FAFC;
+  --text-2:      #CBD5E1;
+  --text-muted:  #94A3B8;
+  --text-dim:    #64748B;
+  --text-dimmer: #475569;
+
+  /* Semantic */
+  --success: #22D3A7;
+  --warn:    #FCD34D;
+  --error:   #F87171;
+
+  /* Signature gradients */
+  --grad-brand:  linear-gradient(135deg, #67E8F9 0%, #38BDF8 50%, #2563EB 100%);
+  --grad-halo:   linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+  --grad-night:  linear-gradient(180deg, #070B14 0%, #030712 100%);
+  --grad-pulse:  radial-gradient(circle at 50% 50%, rgba(56,189,248,0.40), transparent 70%);
+
+  /* Elevation */
+  --shadow-glow:    0 0 30px rgba(56,189,248,0.45);
+  --shadow-glow-lg: 0 0 60px rgba(56,189,248,0.30), 0 20px 60px rgba(56,189,248,0.18);
+  --shadow-card:    0 8px 32px rgba(0,0,0,0.40);
+  --shadow-hover:   0 20px 60px rgba(56,189,248,0.18);
+
+  /* Radius */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   14px;
+  --r-xl:   22px;
+  --r-pill: 9999px;
+
+  /* Typography */
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+
+  /* Dividers */
+  --rule-strong: rgba(56,189,248,0.30);
+  --rule:        rgba(56,189,248,0.18);
+  --rule-soft:   rgba(56,189,248,0.10);
+}
+/* ──────────────────────────────────────────────────────────────────── */
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -38,7 +100,7 @@
   }
 
   .text-gradient-cyan {
-    background: linear-gradient(135deg, #38BDF8 0%, #67E8F9 50%, #818CF8 100%);
+    background: var(--grad-brand); /* 135deg: #67E8F9 → #38BDF8 → #2563EB */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
