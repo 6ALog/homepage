@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// When deploying to GitHub Pages the site lives at /homepage/.
-// Set VITE_BASE_PATH=/ in your environment (or a custom domain config)
-// to override this for production on a custom domain.
-const base = process.env.VITE_BASE_PATH ?? '/homepage/'
+// Custom domain (6alogic.com) serves from root, so base is '/'.
+// If reverting to 6alog.github.io/homepage without a custom domain,
+// set VITE_BASE_PATH=/homepage/ in the GitHub Actions environment.
+const base = process.env.VITE_BASE_PATH ?? '/'
 
 export default defineConfig({
   base,
