@@ -42,11 +42,8 @@ export function Footer() {
             {/* Brand */}
             <div>
               <Link to="/" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic home">
-                <img
-                  src="/logo-lockup-horizontal.png"
-                  alt="6A Logic"
-                  className="h-8 w-auto"
-                />
+                <img src="/logo-lockup-horizontal.png"       alt="6A Logic" className="logo-default h-8 w-auto" />
+                <img src="/logo-lockup-horizontal-white.png" alt="6A Logic" className="logo-mono    h-8 w-auto" />
               </Link>
               <p className="text-brand-textDim text-sm leading-relaxed max-w-xs mb-6">
                 {footer.description}

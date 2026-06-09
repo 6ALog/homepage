@@ -8,15 +8,20 @@ import { TechnologyPage } from './pages/TechnologyPage'
 import { ContactPage } from './pages/ContactPage'
 import { BlogListPage } from './pages/BlogListPage'
 import { BlogPostPage } from './pages/BlogPostPage'
+import { useTheme } from './hooks/useTheme'
 
 export default function App() {
+  useTheme() // applies data-theme to <html> and persists to localStorage
+
   return (
     <BrowserRouter>
       <div
-        className="relative min-h-screen text-brand-textPrimary"
+        className="app-bg relative min-h-screen text-brand-textPrimary"
         style={{ background: 'linear-gradient(45deg, #030712 0%, #0B1020 45%, #061827 100%)' }}
       >
-        <MorphingBlobs />
+        <div className="blobs-layer">
+          <MorphingBlobs />
+        </div>
 
         <div className="relative z-10">
           <Navbar />

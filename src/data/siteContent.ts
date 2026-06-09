@@ -11,7 +11,6 @@ export const nav = {
         { label: 'Workflow Automation',     href: '/how-it-works' },
       ],
     },
-    { label: 'Use Cases',    href: '/how-it-works#use-cases' },
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'Blog',         href: '/blog' },
     { label: 'Contact',      href: '/contact' },

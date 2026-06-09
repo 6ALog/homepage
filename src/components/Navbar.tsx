@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
 import { nav } from '../data/siteContent'
 import { Button } from './ui/Button'
+import { ThemeToggle } from './ThemeToggle'
+import { useTheme } from '../hooks/useTheme'
 
 type NavLink = {
   label: string
@@ -131,6 +133,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const navigate = useNavigate()
+  const { theme, toggle } = useTheme()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24)
@@ -168,11 +171,8 @@ export function Navbar() {
             className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
             aria-label="6A Logic home"
           >
-            <img
-              src="/logo-mark.png"
-              alt="6A Logic"
-              className="h-[60px] lg:h-[72px] w-auto"
-            />
+            <img src="/logo-mark.png"       alt="6A Logic" className="logo-default h-[60px] lg:h-[72px] w-auto" />
+            <img src="/logo-mark-white.png" alt="6A Logic" className="logo-mono    h-[60px] lg:h-[72px] w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -184,6 +184,7 @@ export function Navbar() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle theme={theme} onToggle={toggle} />
             <Button
               href="https://crm.6alogic.com"
               target="_blank"
@@ -294,6 +295,9 @@ export function Navbar() {
               ))}
             </ul>
             <div className="flex flex-col gap-3 mt-6">
+              <div className="flex justify-start">
+                <ThemeToggle theme={theme} onToggle={toggle} />
+              </div>
               <Button
                 href="https://crm.6alogic.com"
                 target="_blank"

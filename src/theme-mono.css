@@ -1,0 +1,144 @@
+/*
+ * ── Monochrome Theme ──────────────────────────────────────────────────
+ * Applied when <html data-theme="mono">.
+ * Swaps all brand cyan/blue accents to white/gray and backgrounds to
+ * pure black. Toggle via the ThemeToggle button in the navbar.
+ * ─────────────────────────────────────────────────────────────────────
+ */
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+
+[data-theme="mono"] body {
+  background-color: #000000;
+}
+
+[data-theme="mono"] .app-bg {
+  background: linear-gradient(45deg, #000000 0%, #111111 45%, #0A0A0A 100%) !important;
+}
+
+/* Desaturate the decorative morphing blobs */
+[data-theme="mono"] .blobs-layer {
+  filter: grayscale(1) brightness(0.35);
+}
+
+/* ── Named CSS utility overrides ──────────────────────────────────── */
+
+[data-theme="mono"] .text-gradient {
+  background: linear-gradient(to bottom, #FFFFFF 20%, #D1D5DB 70%, #9CA3AF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="mono"] .text-gradient-cyan {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 50%, #9CA3AF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="mono"] .mono-label {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme="mono"] .glass {
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="mono"] .glass-dark {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="mono"] .grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+[data-theme="mono"] .glow-cyan {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="mono"] .glow-cyan-lg {
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.1), 0 20px 60px rgba(255, 255, 255, 0.05);
+}
+
+/* 3D cube */
+[data-theme="mono"] .cube__face {
+  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* SVG flow connector lines */
+[data-theme="mono"] .flow-line {
+  stroke: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ── Logo swap ────────────────────────────────────────────────────── */
+/* Default (colored) logo hidden, white logo shown in mono mode       */
+
+.logo-mono   { display: none; }
+[data-theme="mono"] .logo-default { display: none; }
+[data-theme="mono"] .logo-mono    { display: block; }
+
+/* ── Tailwind brand-color class overrides ─────────────────────────── */
+/* text */
+[data-theme="mono"] .text-brand-cyan          { color: #FFFFFF; }
+[data-theme="mono"] .hover\:text-brand-cyan:hover { color: #FFFFFF; }
+[data-theme="mono"] .text-brand-accent        { color: #E5E7EB; }
+[data-theme="mono"] .text-brand-blue          { color: #9CA3AF; }
+[data-theme="mono"] .text-brand-indigo        { color: #9CA3AF; }
+
+/* backgrounds */
+[data-theme="mono"] .bg-brand-cyan            { background-color: #FFFFFF; }
+[data-theme="mono"] .bg-brand-bg              { background-color: #000000; }
+[data-theme="mono"] .bg-brand-bgMid           { background-color: #0A0A0A; }
+[data-theme="mono"] .bg-brand-bgLight         { background-color: #111111; }
+[data-theme="mono"] .bg-brand-bgCard          { background-color: #1A1A1A; }
+[data-theme="mono"] .text-brand-bg            { color: #000000; }
+
+/* brand-cyan with opacity variants */
+[data-theme="mono"] .bg-brand-cyan\/10        { background-color: rgba(255,255,255,0.07); }
+[data-theme="mono"] .hover\:bg-brand-cyan\/10:hover { background-color: rgba(255,255,255,0.1); }
+
+/* borders */
+[data-theme="mono"] .border-brand-cyan\/30    { border-color: rgba(255,255,255,0.22); }
+[data-theme="mono"] .border-brand-cyan\/20    { border-color: rgba(255,255,255,0.16); }
+[data-theme="mono"] .border-brand-cyan\/18    { border-color: rgba(255,255,255,0.14); }
+[data-theme="mono"] .border-brand-cyan\/10    { border-color: rgba(255,255,255,0.08); }
+[data-theme="mono"] .border-brand-cyan\/08    { border-color: rgba(255,255,255,0.06); }
+[data-theme="mono"] .hover\:border-brand-cyan\/40:hover { border-color: rgba(255,255,255,0.3); }
+[data-theme="mono"] .hover\:border-brand-cyan\/50:hover { border-color: rgba(255,255,255,0.35); }
+
+/* box shadows */
+[data-theme="mono"] .shadow-cyan-glow         { box-shadow: 0 0 30px rgba(255,255,255,0.18); }
+[data-theme="mono"] .shadow-cyan-glow-lg      { box-shadow: 0 0 60px rgba(255,255,255,0.1), 0 20px 60px rgba(255,255,255,0.05); }
+
+/* ping dot */
+[data-theme="mono"] .bg-brand-cyan.animate-ping-slow { background-color: #FFFFFF; }
+
+/* Button: primary variant hover (uses bg-white hover) */
+[data-theme="mono"] .hover\:bg-white:hover    { background-color: #E5E7EB; }
+
+/* ── Blog prose ───────────────────────────────────────────────────── */
+
+[data-theme="mono"] .prose-6a a              { color: #FFFFFF; }
+[data-theme="mono"] .prose-6a a:hover        { color: #D1D5DB; }
+[data-theme="mono"] .prose-6a code {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  color: #FFFFFF;
+}
+[data-theme="mono"] .prose-6a pre {
+  background: rgba(0,0,0,0.85);
+  border-color: rgba(255,255,255,0.12);
+}
+[data-theme="mono"] .prose-6a ul li::marker  { color: #FFFFFF; }
+[data-theme="mono"] .prose-6a blockquote     { border-left-color: rgba(255,255,255,0.25); }
+[data-theme="mono"] .prose-6a hr             { border-top-color: rgba(255,255,255,0.08); }
