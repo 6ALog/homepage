@@ -7,7 +7,7 @@ export function SystemsSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="relative py-24 lg:py-28 overflow-hidden" aria-labelledby="systems-heading">
+    <section ref={ref} id="system-integration" className="relative py-24 lg:py-28 overflow-hidden" aria-labelledby="systems-heading">
       <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" aria-hidden="true" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">

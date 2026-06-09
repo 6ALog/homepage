@@ -54,10 +54,10 @@ export function CTABanner() {
             </div>
 
             <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:flex-shrink-0">
-              <Button href="mailto:contact@6alogic.com" size="lg">
+              <Button href="https://calendar.app.google/xPb4454AYtz4CARJA" target="_blank" rel="noopener noreferrer" size="lg">
                 {ctaBanner.primaryCta}
               </Button>
-              <Button href="mailto:contact@6alogic.com" variant="ghost" size="lg">
+              <Button href="https://calendar.app.google/xPb4454AYtz4CARJA" target="_blank" rel="noopener noreferrer" variant="ghost" size="lg">
                 {ctaBanner.secondaryCta}
               </Button>
             </div>
@@ -128,10 +128,10 @@ export function FinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button href="mailto:contact@6alogic.com" size="lg" className="px-10 py-5 text-lg">
+            <Button href="https://calendar.app.google/xPb4454AYtz4CARJA" target="_blank" rel="noopener noreferrer" size="lg" className="px-10 py-5 text-lg">
               {finalCta.primaryCta}
             </Button>
-            <Button href="mailto:contact@6alogic.com" variant="outline" size="lg">
+            <Button href="https://calendar.app.google/xPb4454AYtz4CARJA" target="_blank" rel="noopener noreferrer" variant="outline" size="lg">
               {finalCta.secondaryCta}
             </Button>
           </div>
