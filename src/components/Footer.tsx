@@ -34,7 +34,7 @@ export function Footer() {
       <StatusTicker />
 
       <div
-        className="border-t border-brand-cyan/10 pt-16 pb-10"
+        className="footer-inner border-t border-brand-cyan/10 pt-16 pb-10"
         style={{ background: 'rgba(7,11,20,0.95)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -50,7 +50,7 @@ export function Footer() {
               </p>
 
               {/* Status pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+              <div className="footer-status-pill inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
                 style={{ background: 'rgba(56,189,248,0.07)', border: '1px solid rgba(56,189,248,0.18)' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping-slow" aria-hidden="true" />
                 <span className="font-mono text-xs text-brand-cyan tracking-widest">SYSTEMS ONLINE</span>
@@ -116,7 +116,7 @@ export function Footer() {
                 href="https://calendar.app.google/xPb4454AYtz4CARJA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-xs tracking-wider px-4 py-2 rounded-lg transition-all duration-200 hover:border-brand-cyan/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                className="footer-book-btn inline-flex items-center gap-2 font-mono text-xs tracking-wider px-4 py-2 rounded-lg transition-all duration-200 hover:border-brand-cyan/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                 style={{ background: 'rgba(56,189,248,0.06)', border: '1px solid rgba(56,189,248,0.18)' }}
               >
                 Book a Consultation

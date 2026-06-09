@@ -15,7 +15,7 @@ export function CTABanner() {
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-2xl p-8 lg:p-12"
+          className="cta-card relative overflow-hidden rounded-2xl p-8 lg:p-12"
           style={{
             background: 'rgba(15,23,42,0.7)',
             backdropFilter: 'blur(20px)',
@@ -28,7 +28,7 @@ export function CTABanner() {
 
           {/* Glow blob */}
           <div
-            className="absolute -top-20 -right-20 pointer-events-none"
+            className="cta-glow absolute -top-20 -right-20 pointer-events-none"
             aria-hidden="true"
             style={{
               width: '300px',
@@ -76,14 +76,14 @@ export function FinalCTA() {
     <section ref={ref} className="relative py-28 lg:py-40 overflow-hidden text-center" aria-labelledby="final-cta-heading">
       {/* Background gradient */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="final-cta-bg absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(37,99,235,0.08) 50%, rgba(7,11,20,1) 100%)' }}
       />
 
       {/* Radial glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        className="final-cta-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
         aria-hidden="true"
         style={{
           width: '700px',

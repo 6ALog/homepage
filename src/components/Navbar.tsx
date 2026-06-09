@@ -32,7 +32,7 @@ function DropdownMenu({ items, onClose }: { items: { label: string; href: string
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -8, scale: 0.97 }}
       transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute top-full left-0 mt-2 w-60 rounded-xl overflow-hidden z-50"
+      className="nav-dropdown absolute top-full left-0 mt-2 w-60 rounded-xl overflow-hidden z-50"
       style={{
         background: 'rgba(7,11,20,0.97)',
         backdropFilter: 'blur(20px)',
@@ -52,7 +52,7 @@ function DropdownMenu({ items, onClose }: { items: { label: string; href: string
               onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
             >
               <span
-                className="w-1 h-1 rounded-full flex-shrink-0 transition-colors"
+                className="nav-dot w-1 h-1 rounded-full flex-shrink-0 transition-colors"
                 style={{ background: 'rgba(56,189,248,0.4)' }}
                 aria-hidden="true"
               />

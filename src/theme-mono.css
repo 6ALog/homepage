@@ -91,6 +91,8 @@
 /* text */
 [data-theme="mono"] .text-brand-cyan          { color: #FFFFFF; }
 [data-theme="mono"] .hover\:text-brand-cyan:hover { color: #FFFFFF; }
+[data-theme="mono"] .text-brand-cyan\/60      { color: rgba(255,255,255,0.4) !important; }
+[data-theme="mono"] .text-brand-cyan\/40      { color: rgba(255,255,255,0.3) !important; }
 [data-theme="mono"] .text-brand-accent        { color: #E5E7EB; }
 [data-theme="mono"] .text-brand-blue          { color: #9CA3AF; }
 [data-theme="mono"] .text-brand-indigo        { color: #9CA3AF; }
@@ -125,6 +127,227 @@
 
 /* Button: primary variant hover (uses bg-white hover) */
 [data-theme="mono"] .hover\:bg-white:hover    { background-color: #E5E7EB; }
+
+/* ── Named component classes ─────────────────────────────────────── */
+
+/* Navbar dropdown */
+[data-theme="mono"] .nav-dropdown {
+  background: rgba(10, 10, 10, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.85) !important;
+}
+[data-theme="mono"] .nav-dot {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Wire cube faces */
+[data-theme="mono"] .cube-face {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Hero architecture diagram */
+[data-theme="mono"] .arch-ring {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="mono"] .arch-svg line {
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+[data-theme="mono"] .arch-node {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+[data-theme="mono"] .arch-node .text-brand-cyan {
+  color: #fff;
+}
+
+/* Hero trust pills */
+[data-theme="mono"] .hero-pill {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Section background gradients — swap navy to near-black */
+[data-theme="mono"] .section-bg {
+  background: linear-gradient(180deg, #000 0%, #0A0A0A 40%, #111 70%, #000 100%) !important;
+}
+
+/* AiUrgency callout card */
+[data-theme="mono"] .accent-callout {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="mono"] .accent-callout .text-brand-cyan {
+  color: #D1D5DB;
+}
+
+/* Icon rings (warning icon, etc.) */
+[data-theme="mono"] .accent-icon-ring {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+[data-theme="mono"] .accent-icon-ring svg path,
+[data-theme="mono"] .accent-icon-ring svg circle {
+  stroke: rgba(255, 255, 255, 0.7) !important;
+  fill: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ── Catch-all attribute selectors ───────────────────────────────── */
+/* Target any remaining inline styles using cyan rgba values           */
+
+[data-theme="mono"] [style*="rgba(56,189,248"],
+[data-theme="mono"] [style*="rgba(56, 189, 248"] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+
+/* Cyan backgrounds specifically */
+[data-theme="mono"] [style*="background: rgba(56,189,248"],
+[data-theme="mono"] [style*="background: rgba(56, 189, 248"],
+[data-theme="mono"] [style*="background:rgba(56,189,248"],
+[data-theme="mono"] [style*="background:rgba(56, 189, 248"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Cyan box-shadows — replace with subtle white glow */
+[data-theme="mono"] [style*="box-shadow"][style*="56,189,248"],
+[data-theme="mono"] [style*="box-shadow"][style*="56, 189, 248"] {
+  box-shadow: 0 0 60px rgba(255,255,255,0.04), 0 30px 80px rgba(0,0,0,0.5) !important;
+}
+
+/* Dark navy section gradient overlays */
+[data-theme="mono"] [style*="070E1C"],
+[data-theme="mono"] [style*="0A1628"] {
+  background: linear-gradient(180deg, #000 0%, #0A0A0A 40%, #111 70%, #000 100%) !important;
+}
+[data-theme="mono"] [style*="061827"],
+[data-theme="mono"] [style*="070B14"],
+[data-theme="mono"] [style*="0B1020"] {
+  background: rgba(10,10,10,0.8) !important;
+}
+
+/* ── SVG presentation attribute overrides ───────────────────────── */
+/* stroke/fill are XML attrs, not CSS — need attribute selectors     */
+
+[data-theme="mono"] [stroke="#38BDF8"],
+[data-theme="mono"] [stroke="#38bdf8"] {
+  stroke: rgba(255,255,255,0.5) !important;
+}
+[data-theme="mono"] [fill="#38BDF8"],
+[data-theme="mono"] [fill="#38bdf8"] {
+  fill: rgba(255,255,255,0.07) !important;
+}
+
+/* ── Inline color: cyan overrides ───────────────────────────────── */
+/* Covers both the raw hex/rgba written by the author and the        */
+/* rgb() form browsers write when normalizing hex values.            */
+
+[data-theme="mono"] [style*="color: #38BDF8"],
+[data-theme="mono"] [style*="color: #38bdf8"],
+[data-theme="mono"] [style*="color:#38BDF8"],
+[data-theme="mono"] [style*="color:#38bdf8"],
+[data-theme="mono"] [style*="color: rgba(56,189,248"],
+[data-theme="mono"] [style*="color: rgba(56, 189, 248"],
+[data-theme="mono"] [style*="color:rgba(56,189,248"],
+[data-theme="mono"] [style*="color:rgba(56, 189, 248"],
+[data-theme="mono"] [style*="color: rgb(56, 189, 248"],
+[data-theme="mono"] [style*="color: rgb(56,189,248"],
+[data-theme="mono"] [style*="color:rgb(56, 189, 248"],
+[data-theme="mono"] [style*="color:rgb(56,189,248"] {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* ── Radial-gradient glow divs — suppress in mono ───────────────── */
+/* These are decorative ambient glows; their background value starts  */
+/* with "radial-gradient(" so the rgba catch-all above misses them.   */
+
+[data-theme="mono"] [style*="background: radial-gradient"][style*="56,189,248"],
+[data-theme="mono"] [style*="background:radial-gradient"][style*="56,189,248"],
+[data-theme="mono"] [style*="background: radial-gradient"][style*="56, 189, 248"],
+[data-theme="mono"] [style*="background:radial-gradient"][style*="56, 189, 248"] {
+  background: transparent !important;
+}
+
+/* Blue / navy decorative glows (rgba(37,99,235,...)) */
+[data-theme="mono"] [style*="background: radial-gradient"][style*="37,99,235"],
+[data-theme="mono"] [style*="background:radial-gradient"][style*="37,99,235"],
+[data-theme="mono"] [style*="background: linear-gradient"][style*="37,99,235"],
+[data-theme="mono"] [style*="background:linear-gradient"][style*="37,99,235"] {
+  background: transparent !important;
+}
+
+/* ── BusinessSuite ────────────────────────────────────────────────── */
+
+[data-theme="mono"] .suite-section-bg {
+  background: linear-gradient(180deg, #000 0%, #0A0A0A 40%, #111 70%, #000 100%) !important;
+}
+[data-theme="mono"] .suite-glow {
+  background: transparent !important;
+  filter: none !important;
+}
+[data-theme="mono"] .suite-track-badge {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+  color: rgba(255,255,255,0.5) !important;
+}
+[data-theme="mono"] .suite-tool-icon {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+[data-theme="mono"] .suite-tool-link {
+  color: rgba(255,255,255,0.4) !important;
+}
+[data-theme="mono"] .suite-cost-callout {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+[data-theme="mono"] .suite-portal-mock {
+  border-color: rgba(255,255,255,0.12) !important;
+  box-shadow: none !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+
+[data-theme="mono"] .footer-inner {
+  background: rgba(0,0,0,0.98) !important;
+}
+[data-theme="mono"] .footer-status-pill {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+[data-theme="mono"] .footer-book-btn {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+
+/* ── BlogCard ─────────────────────────────────────────────────────── */
+
+[data-theme="mono"] .blog-card-link {
+  background: rgba(20,20,20,0.6) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+[data-theme="mono"] .blog-card-tag {
+  background: rgba(255,255,255,0.05) !important;
+  color: rgba(255,255,255,0.45) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* ── CTASection ───────────────────────────────────────────────────── */
+
+[data-theme="mono"] .cta-card {
+  background: rgba(15,15,15,0.7) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  box-shadow: none !important;
+}
+[data-theme="mono"] .cta-glow {
+  background: transparent !important;
+}
+[data-theme="mono"] .final-cta-bg {
+  background: linear-gradient(180deg, transparent 0%, rgba(30,30,30,0.2) 50%, rgba(0,0,0,1) 100%) !important;
+}
+[data-theme="mono"] .final-cta-glow {
+  background: transparent !important;
+}
 
 /* ── Blog prose ───────────────────────────────────────────────────── */
 

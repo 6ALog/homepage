@@ -17,7 +17,7 @@ export function BlogCard({ post, index }: { post: Post; index: number }) {
     >
       <Link
         to={`/blog/${post.slug}`}
-        className="block rounded-xl p-6 h-full transition-all duration-200 hover:border-brand-cyan/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan group"
+        className="blog-card-link block rounded-xl p-6 h-full transition-all duration-200 hover:border-brand-cyan/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan group"
         style={{
           background: 'rgba(15,23,42,0.6)',
           border: '1px solid rgba(56,189,248,0.12)',
@@ -35,7 +35,7 @@ export function BlogCard({ post, index }: { post: Post; index: number }) {
             {post.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full"
+                className="blog-card-tag font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full"
                 style={{ background: 'rgba(56,189,248,0.08)', color: 'rgba(56,189,248,0.7)', border: '1px solid rgba(56,189,248,0.15)' }}
               >
                 {tag}
