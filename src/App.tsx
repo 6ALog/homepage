@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { MorphingBlobs } from './components/MorphingBlobs'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
 import { HomePage } from './pages/HomePage'
 import { HowItWorksPage } from './pages/HowItWorksPage'
 import { TechnologyPage } from './pages/TechnologyPage'
@@ -24,6 +25,7 @@ export default function App() {
         </div>
 
         <div className="relative z-10">
+          <GoogleAnalytics />
           <Navbar />
 
           <Routes>
