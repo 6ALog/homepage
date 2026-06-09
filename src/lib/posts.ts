@@ -1,5 +1,3 @@
-import matter from 'gray-matter'
-
 export interface Post {
   slug: string
   title: string
@@ -8,6 +6,34 @@ export interface Post {
   excerpt: string
   tags: string[]
   content: string
+}
+
+// Minimal browser-safe frontmatter parser (YAML subset: string/array values)
+function parseFrontmatter(source: string): { data: Record<string, unknown>; content: string } {
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
+  if (!match) return { data: {}, content: source }
+
+  const data: Record<string, unknown> = {}
+  for (const line of match[1].split(/\r?\n/)) {
+    const colon = line.indexOf(':')
+    if (colon === -1) continue
+    const key = line.slice(0, colon).trim()
+    const raw = line.slice(colon + 1).trim()
+
+    // Array: ["a", "b"] or [a, b]
+    if (raw.startsWith('[') && raw.endsWith(']')) {
+      data[key] = raw
+        .slice(1, -1)
+        .split(',')
+        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .filter(Boolean)
+    } else {
+      // Strip optional surrounding quotes
+      data[key] = raw.replace(/^["']|["']$/g, '')
+    }
+  }
+
+  return { data, content: match[2] }
 }
 
 // Load all markdown files from /posts at build time
@@ -19,14 +45,14 @@ function slugFromPath(path: string): string {
 
 export const posts: Post[] = Object.entries(raw)
   .map(([path, source]) => {
-    const { data, content } = matter(source)
+    const { data, content } = parseFrontmatter(source)
     return {
       slug:    slugFromPath(path),
-      title:   data.title   ?? 'Untitled',
-      date:    data.date    ?? '',
-      author:  data.author  ?? '6A Logic',
-      excerpt: data.excerpt ?? '',
-      tags:    Array.isArray(data.tags) ? data.tags : [],
+      title:   typeof data.title   === 'string' ? data.title   : 'Untitled',
+      date:    typeof data.date    === 'string' ? data.date    : '',
+      author:  typeof data.author  === 'string' ? data.author  : '6A Logic',
+      excerpt: typeof data.excerpt === 'string' ? data.excerpt : '',
+      tags:    Array.isArray(data.tags) ? (data.tags as string[]) : [],
       content,
     }
   })
