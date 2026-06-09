@@ -23,7 +23,7 @@ function ArchitectureCard() {
         {[220, 300, 380].map((size, i) => (
           <div
             key={i}
-            className={i % 2 === 0 ? 'animate-rotate-ring absolute' : 'animate-rotate-ring-r absolute'}
+            className={`arch-ring ${i % 2 === 0 ? 'animate-rotate-ring absolute' : 'animate-rotate-ring-r absolute'}`}
             style={{
               width: size,
               height: size,
@@ -68,7 +68,7 @@ function ArchitectureCard() {
 
           {/* SVG connector lines */}
           <svg
-            className="absolute inset-0 pointer-events-none"
+            className="arch-svg absolute inset-0 pointer-events-none"
             style={{ zIndex: 1 }}
             aria-hidden="true"
           >
@@ -108,7 +108,7 @@ function ArchitectureCard() {
             {hero.architectureMiddle.map((item) => (
               <div
                 key={item}
-                className="rounded-lg px-2 py-1.5 text-center"
+                className="arch-node rounded-lg px-2 py-1.5 text-center"
                 style={{
                   background: 'rgba(56,189,248,0.08)',
                   border: '1px solid rgba(56,189,248,0.3)',
@@ -237,7 +237,7 @@ export function Hero() {
               {hero.pills.map((pill) => (
                 <span
                   key={pill}
-                  className="font-mono text-xs tracking-wider px-3 py-1.5 rounded-full"
+                  className="hero-pill font-mono text-xs tracking-wider px-3 py-1.5 rounded-full"
                   style={{
                     background: 'rgba(56,189,248,0.07)',
                     border: '1px solid rgba(56,189,248,0.2)',

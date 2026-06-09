@@ -3,17 +3,17 @@ export const nav = {
   links: [
     {
       label: 'Services',
-      href: '#services',
+      href: '/services',
       dropdown: [
-        { label: 'Business Suite',         href: '#business-suite' },
-        { label: 'System Integration',     href: '#system-integration' },
-        { label: 'MCP & AI Infrastructure',href: '#ai-infrastructure' },
-        { label: 'Workflow Automation',    href: '#how-it-works' },
+        { label: 'Business Suite',          href: '/services#business-suite' },
+        { label: 'System Integration',      href: '/technology#system-integration' },
+        { label: 'MCP & AI Infrastructure', href: '/technology#ai-infrastructure' },
+        { label: 'Workflow Automation',     href: '/how-it-works' },
       ],
     },
-    { label: 'Use Cases',    href: '#use-cases' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Contact',      href: '#contact' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Blog',         href: '/blog' },
+    { label: 'Contact',      href: '/contact' },
   ],
   cta: 'Book a Consultation',
 }
@@ -498,14 +498,19 @@ export const finalCta = {
 export const footer = {
   logo: '6A Logic',
   description: 'Data unification, automation, and AI infrastructure for small and mid-sized businesses.',
-  email: 'contact@6alogic.com',
+  emails: {
+    contact: 'contact@6alogic.com',
+    sales:   'sales@6alogic.com',
+    support: 'support@6alogic.com',
+  },
   copyright: '© 2026 6A Logic. All rights reserved.',
   links: [
-    { label: 'Services',          href: '#services' },
-    { label: 'Use Cases',         href: '#use-cases' },
-    { label: 'How It Works',      href: '#how-it-works' },
-    { label: 'AI Infrastructure', href: '#ai-infrastructure' },
-    { label: 'Contact',           href: '#contact' },
+    { label: 'Services',          href: '/services' },
+    { label: 'Use Cases',         href: '/how-it-works#use-cases' },
+    { label: 'How It Works',      href: '/how-it-works' },
+    { label: 'AI Infrastructure', href: '/technology#ai-infrastructure' },
+    { label: 'Blog',              href: '/blog' },
+    { label: 'Contact',           href: '/contact' },
   ],
   tickerItems: [
     'CRM_SYNC: ONLINE',

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { footer } from '../data/siteContent'
 import { StatusTicker } from './StatusTicker'
 
@@ -33,26 +34,23 @@ export function Footer() {
       <StatusTicker />
 
       <div
-        className="border-t border-brand-cyan/10 pt-16 pb-10"
+        className="footer-inner border-t border-brand-cyan/10 pt-16 pb-10"
         style={{ background: 'rgba(7,11,20,0.95)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-10 lg:gap-16 mb-12">
             {/* Brand */}
             <div>
-              <a href="#" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic home">
-                <img
-                  src="/logo-lockup-horizontal.png"
-                  alt="6A Logic"
-                  className="h-8 w-auto"
-                />
-              </a>
+              <Link to="/" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded" aria-label="6A Logic home">
+                <img src="/logo-lockup-horizontal.png"       alt="6A Logic" className="logo-default h-8 w-auto" />
+                <img src="/logo-lockup-horizontal-white.png" alt="6A Logic" className="logo-mono    h-8 w-auto" />
+              </Link>
               <p className="text-brand-textDim text-sm leading-relaxed max-w-xs mb-6">
                 {footer.description}
               </p>
 
               {/* Status pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+              <div className="footer-status-pill inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
                 style={{ background: 'rgba(56,189,248,0.07)', border: '1px solid rgba(56,189,248,0.18)' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping-slow" aria-hidden="true" />
                 <span className="font-mono text-xs text-brand-cyan tracking-widest">SYSTEMS ONLINE</span>
@@ -63,7 +61,7 @@ export function Footer() {
                 {[
                   { icon: <LinkedInIcon />, label: 'LinkedIn', href: '#' },
                   { icon: <GithubIcon />, label: 'GitHub', href: '#' },
-                  { icon: <EmailIcon />, label: `Email ${footer.email}`, href: `mailto:${footer.email}` },
+                  { icon: <EmailIcon />, label: `Email ${footer.emails.contact}`, href: `mailto:${footer.emails.contact}` },
                 ].map(({ icon, label, href }) => (
                   <a
                     key={label}
@@ -83,12 +81,12 @@ export function Footer() {
               <ul className="space-y-3" role="list">
                 {footer.links.map((link) => (
                   <li key={link.href}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-brand-textDim hover:text-white text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -97,15 +95,28 @@ export function Footer() {
             {/* Contact */}
             <div>
               <span className="mono-label block mb-5">Contact</span>
+              <ul className="space-y-2 mb-4" role="list">
+                {[
+                  { label: 'General',  addr: footer.emails.contact },
+                  { label: 'Sales',    addr: footer.emails.sales },
+                  { label: 'Support',  addr: footer.emails.support },
+                ].map(({ label, addr }) => (
+                  <li key={addr} className="flex items-baseline gap-2">
+                    <span className="font-mono text-[10px] text-brand-textDimmer uppercase tracking-wider w-14 shrink-0">{label}</span>
+                    <a
+                      href={`mailto:${addr}`}
+                      className="text-brand-textDim hover:text-brand-cyan text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
+                    >
+                      {addr}
+                    </a>
+                  </li>
+                ))}
+              </ul>
               <a
-                href={`mailto:${footer.email}`}
-                className="text-brand-textDim hover:text-brand-cyan text-sm transition-colors duration-200 block mb-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
-              >
-                {footer.email}
-              </a>
-              <a
-                href="mailto:contact@6alogic.com"
-                className="inline-flex items-center gap-2 font-mono text-xs tracking-wider px-4 py-2 rounded-lg transition-all duration-200 hover:border-brand-cyan/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                href="https://calendar.app.google/xPb4454AYtz4CARJA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-book-btn inline-flex items-center gap-2 font-mono text-xs tracking-wider px-4 py-2 rounded-lg transition-all duration-200 hover:border-brand-cyan/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                 style={{ background: 'rgba(56,189,248,0.06)', border: '1px solid rgba(56,189,248,0.18)' }}
               >
                 Book a Consultation

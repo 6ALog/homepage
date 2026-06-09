@@ -28,12 +28,12 @@ export function ThreeDWireCube({ className = '', size = 100 }: ThreeDWireCubePro
           animation: 'cubeRotate 12s linear infinite',
         }}
       >
-        <div style={{ ...faceStyle, transform: `rotateY(0deg) translateZ(${half}px)` }} />
-        <div style={{ ...faceStyle, transform: `rotateY(180deg) translateZ(${half}px)` }} />
-        <div style={{ ...faceStyle, transform: `rotateY(90deg) translateZ(${half}px)` }} />
-        <div style={{ ...faceStyle, transform: `rotateY(-90deg) translateZ(${half}px)` }} />
-        <div style={{ ...faceStyle, transform: `rotateX(90deg) translateZ(${half}px)` }} />
-        <div style={{ ...faceStyle, transform: `rotateX(-90deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateY(0deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateY(180deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateY(90deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateY(-90deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateX(90deg) translateZ(${half}px)` }} />
+        <div className="cube-face" style={{ ...faceStyle, transform: `rotateX(-90deg) translateZ(${half}px)` }} />
       </div>
     </div>
   )

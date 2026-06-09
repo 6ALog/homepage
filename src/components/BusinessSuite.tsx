@@ -56,7 +56,7 @@ function PortalMockup() {
   const tools = ['CRM', 'Accounting', 'Projects', 'Analytics', 'AI Assistant']
   return (
     <div
-      className="glass rounded-2xl overflow-hidden"
+      className="suite-portal-mock glass rounded-2xl overflow-hidden"
       style={{ border: '1px solid rgba(56,189,248,0.2)', boxShadow: '0 0 60px rgba(56,189,248,0.1)' }}
       aria-hidden="true"
     >
@@ -165,13 +165,13 @@ export function BusinessSuite() {
     >
       {/* Background */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="suite-section-bg absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{ background: 'linear-gradient(180deg, #030712 0%, #070E1C 30%, #0A1628 60%, #030712 100%)' }}
       />
       <div className="absolute inset-0 grid-overlay opacity-50 pointer-events-none" aria-hidden="true" />
       <div
-        className="absolute top-0 right-0 pointer-events-none"
+        className="suite-glow absolute top-0 right-0 pointer-events-none"
         aria-hidden="true"
         style={{
           width: '600px', height: '600px',
@@ -224,7 +224,7 @@ export function BusinessSuite() {
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                   <span
-                    className="px-2.5 py-1 rounded-full font-mono text-xs tracking-widest"
+                    className="suite-track-badge px-2.5 py-1 rounded-full font-mono text-xs tracking-widest"
                     style={{
                       background: i === 0 ? 'rgba(56,189,248,0.1)' : 'rgba(129,140,248,0.1)',
                       border: `1px solid ${i === 0 ? 'rgba(56,189,248,0.3)' : 'rgba(129,140,248,0.3)'}`,
@@ -270,7 +270,7 @@ export function BusinessSuite() {
                   className="glass rounded-xl p-4 group hover:border-brand-cyan/30 transition-colors"
                 >
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    className="suite-tool-icon w-9 h-9 rounded-lg flex items-center justify-center mb-3"
                     style={{ background: 'rgba(56,189,248,0.07)', border: '1px solid rgba(56,189,248,0.15)' }}
                     aria-hidden="true"
                   >
@@ -279,7 +279,7 @@ export function BusinessSuite() {
                   <h4 className="font-display font-bold text-white text-sm mb-1">{tool.name}</h4>
                   <p className="font-mono text-xs text-brand-textDim leading-snug mb-2">{tool.description}</p>
                   <p
-                    className="font-mono text-xs leading-snug"
+                    className="suite-tool-link font-mono text-xs leading-snug"
                     style={{ color: 'rgba(56,189,248,0.6)' }}
                   >
                     {tool.openSource}
@@ -327,7 +327,7 @@ export function BusinessSuite() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="relative rounded-2xl px-8 py-7 overflow-hidden"
+          className="suite-cost-callout relative rounded-2xl px-8 py-7 overflow-hidden"
           style={{ background: 'rgba(56,189,248,0.04)', border: '1px solid rgba(56,189,248,0.18)' }}
         >
           <div

@@ -34,6 +34,17 @@
           content="The data layer your AI is missing. Connected operations, ready for AI." />
     <meta name="twitter:image" content="https://6alogic.com/og-banner.png" />
 
+    <!-- GitHub Pages SPA: restore deep-link path stored by 404.html -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== window.location.pathname + window.location.search + window.location.hash) {
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+
     <!-- Fonts (Inter + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

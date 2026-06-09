@@ -1,48 +1,44 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
-import { Hero } from './components/Hero'
-import { AiUrgency } from './components/AiUrgency'
-import { ProblemSection } from './components/ProblemSection'
-import { BusinessSuite } from './components/BusinessSuite'
-import { ServicesSection } from './components/ServicesSection'
-import { MetricGrid } from './components/MetricGrid'
-import { HowItWorks } from './components/HowItWorks'
-import { UseCases } from './components/UseCases'
-import { AiInfrastructure } from './components/AiInfrastructure'
-import { WhySixALogic } from './components/WhySixALogic'
-import { SystemsSection } from './components/SystemsSection'
-import { CTABanner, FinalCTA } from './components/CTASection'
 import { Footer } from './components/Footer'
 import { MorphingBlobs } from './components/MorphingBlobs'
+import { HomePage } from './pages/HomePage'
+import { HowItWorksPage } from './pages/HowItWorksPage'
+import { TechnologyPage } from './pages/TechnologyPage'
+import { ContactPage } from './pages/ContactPage'
+import { BlogListPage } from './pages/BlogListPage'
+import { BlogPostPage } from './pages/BlogPostPage'
+import { useTheme } from './hooks/useTheme'
 
 export default function App() {
+  useTheme() // applies data-theme to <html> and persists to localStorage
+
   return (
-    <div
-      className="relative min-h-screen text-brand-textPrimary"
-      style={{ background: 'linear-gradient(45deg, #030712 0%, #0B1020 45%, #061827 100%)' }}
-    >
-      <MorphingBlobs />
+    <BrowserRouter>
+      <div
+        className="app-bg relative min-h-screen text-brand-textPrimary"
+        style={{ background: 'linear-gradient(45deg, #030712 0%, #0B1020 45%, #061827 100%)' }}
+      >
+        <div className="blobs-layer">
+          <MorphingBlobs />
+        </div>
 
-      <div className="relative z-10">
-        <Navbar />
+        <div className="relative z-10">
+          <Navbar />
 
-        <main>
-          <Hero />
-          <AiUrgency />
-          <ProblemSection />
-          <BusinessSuite />
-          <ServicesSection />
-          <MetricGrid />
-          <HowItWorks />
-          <UseCases />
-          <AiInfrastructure />
-          <WhySixALogic />
-          <SystemsSection />
-          <CTABanner />
-          <FinalCTA />
-        </main>
+          <Routes>
+            <Route path="/"             element={<HomePage />} />
+            <Route path="/services"     element={<HomePage />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/technology"   element={<TechnologyPage />} />
+            <Route path="/contact"      element={<ContactPage />} />
+            <Route path="/blog"         element={<BlogListPage />} />
+            <Route path="/blog/:slug"   element={<BlogPostPage />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   )
 }

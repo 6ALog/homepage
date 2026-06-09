@@ -14,7 +14,7 @@ export function AiUrgency() {
     >
       {/* Deep background gradient to separate from hero */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="section-bg absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
           background:
@@ -122,7 +122,7 @@ export function AiUrgency() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="relative rounded-2xl px-8 py-6 overflow-hidden"
+          className="accent-callout relative rounded-2xl px-8 py-6 overflow-hidden"
           style={{
             background: 'rgba(56,189,248,0.05)',
             border: '1px solid rgba(56,189,248,0.2)',
@@ -138,7 +138,7 @@ export function AiUrgency() {
           />
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-10">
             <div
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+              className="accent-icon-ring flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
               style={{ background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.35)' }}
               aria-hidden="true"
             >

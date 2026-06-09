@@ -5,6 +5,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'ghost' | 'outline'
   size?: 'sm' | 'md' | 'lg'
   href?: string
+  target?: string
+  rel?: string
   children: React.ReactNode
 }
 
@@ -12,6 +14,8 @@ export function Button({
   variant = 'primary',
   size = 'md',
   href,
+  target,
+  rel,
   children,
   className = '',
   ...props
@@ -40,6 +44,8 @@ export function Button({
     return (
       <motion.a
         href={href}
+        target={target}
+        rel={rel}
         className={cls}
         whileTap={{ scale: 0.97 }}
       >
