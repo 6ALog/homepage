@@ -12,6 +12,70 @@ type NavLink = {
   dropdown?: { label: string; href: string }[]
 }
 
+type PortalSession = { authenticated: true; username: string; csrf: string } | { authenticated: false }
+const portalUrl = 'https://apps.6alogic.com'
+
+function AccountControl({ session, mobile, onSignOut }: {
+  session: PortalSession
+  mobile?: boolean
+  onSignOut: (csrf: string) => Promise<void>
+}) {
+  const [open, setOpen] = useState(false)
+  const [error, setError] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    function closeOnOutsideClick(event: MouseEvent) {
+      if (!ref.current?.contains(event.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', closeOnOutsideClick)
+    return () => document.removeEventListener('mousedown', closeOnOutsideClick)
+  }, [open])
+
+  if (!session.authenticated) {
+    return <Button href={`${portalUrl}/login?return_to=home`} variant="outline" size={mobile ? 'lg' : 'sm'} className={mobile ? 'w-full' : ''}>Log In</Button>
+  }
+
+  async function signOut() {
+    if (!session.authenticated) return
+    setError(false)
+    try {
+      await onSignOut(session.csrf)
+      setOpen(false)
+    } catch {
+      setError(true)
+    }
+  }
+
+  return (
+    <div ref={ref} className={`relative ${mobile ? 'w-full' : ''}`}>
+      <button
+        type="button"
+        onClick={() => setOpen(value => !value)}
+        onKeyDown={event => { if (event.key === 'Escape') setOpen(false) }}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label={`Account menu for ${session.username}`}
+        className={`flex items-center justify-between gap-2 rounded-lg border border-brand-cyan/30 px-4 py-2 text-sm font-semibold text-brand-cyan hover:border-brand-cyan hover:bg-brand-cyan/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan ${mobile ? 'w-full' : ''}`}
+      >
+        <span>{session.username}</span>
+        <span aria-hidden="true" className="text-xs">▾</span>
+      </button>
+      {open && (
+        <div
+          role="menu"
+          className={`nav-dropdown z-50 min-w-44 overflow-hidden rounded-xl border border-brand-cyan/20 bg-brand-bgLight shadow-card ${mobile ? 'mt-2' : 'absolute right-0 top-full mt-2'}`}
+        >
+          <a href={portalUrl} role="menuitem" className="block px-4 py-3 text-sm text-brand-textSecondary hover:bg-brand-cyan/10 hover:text-white">Open portal</a>
+          <button type="button" role="menuitem" onClick={signOut} className="block w-full border-t border-brand-cyan/10 px-4 py-3 text-left text-sm text-brand-textSecondary hover:bg-brand-cyan/10 hover:text-white">Sign out</button>
+          {error && <p role="alert" className="px-4 pb-3 text-xs text-brand-error">Sign out failed. Try again.</p>}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function DropdownMenu({ items, onClose }: { items: { label: string; href: string }[]; onClose: () => void }) {
   const navigate = useNavigate()
 
@@ -134,6 +198,34 @@ export function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const navigate = useNavigate()
   const { theme, toggle } = useTheme()
+  const [portalSession, setPortalSession] = useState<PortalSession>({ authenticated: false })
+
+  useEffect(() => {
+    let mounted = true
+    async function refreshSession() {
+      try {
+        const response = await fetch(`${portalUrl}/api/session`, { credentials: 'include', cache: 'no-store' })
+        if (!response.ok) throw new Error('Session check failed')
+        const session = await response.json()
+        if (mounted) setPortalSession(session.authenticated && typeof session.username === 'string' && typeof session.csrf === 'string'
+          ? { authenticated: true, username: session.username, csrf: session.csrf }
+          : { authenticated: false })
+      } catch {
+        if (mounted) setPortalSession({ authenticated: false })
+      }
+    }
+    void refreshSession()
+    window.addEventListener('focus', refreshSession)
+    return () => { mounted = false; window.removeEventListener('focus', refreshSession) }
+  }, [])
+
+  async function signOut(csrf: string) {
+    const response = await fetch(`${portalUrl}/api/logout`, {
+      method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf }, body: '{}',
+    })
+    if (!response.ok) throw new Error('Sign out failed')
+    setPortalSession({ authenticated: false })
+  }
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24)
@@ -176,14 +268,14 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-8" role="list">
+          <ul className="hidden xl:flex items-center gap-8" role="list">
             {(nav.links as NavLink[]).map((link) => (
               <NavItem key={link.href} link={link} onClose={() => {}} />
             ))}
           </ul>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle theme={theme} onToggle={toggle} />
             <Button
               href="https://crm.6alogic.com"
@@ -202,11 +294,12 @@ export function Navbar() {
             >
               {nav.cta}
             </Button>
+            <AccountControl session={portalSession} onSignOut={signOut} />
           </div>
 
           {/* Hamburger */}
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
+            className="xl:hidden flex flex-col gap-1.5 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -317,6 +410,7 @@ export function Navbar() {
               >
                 {nav.cta}
               </Button>
+              <AccountControl session={portalSession} mobile onSignOut={signOut} />
             </div>
           </motion.div>
         )}
