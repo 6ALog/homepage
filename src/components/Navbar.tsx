@@ -224,7 +224,12 @@ export function Navbar() {
       method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf }, body: '{}',
     })
     if (!response.ok) throw new Error('Sign out failed')
+    const { logoutUrl } = await response.json()
+    const target = new URL(logoutUrl)
+    if (target.protocol !== 'https:' || !['auth.6alogic.com', 'auth.apps.6alogic.com'].includes(target.hostname))
+      throw new Error('Unexpected logout URL')
     setPortalSession({ authenticated: false })
+    window.location.assign(target.toString())
   }
 
   useEffect(() => {
@@ -278,7 +283,7 @@ export function Navbar() {
           <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle theme={theme} onToggle={toggle} />
             <Button
-              href="https://crm.6alogic.com"
+              href={portalUrl}
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
@@ -392,7 +397,7 @@ export function Navbar() {
                 <ThemeToggle theme={theme} onToggle={toggle} />
               </div>
               <Button
-                href="https://crm.6alogic.com"
+                href={portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"
