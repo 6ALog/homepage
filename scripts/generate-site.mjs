@@ -41,6 +41,20 @@ function postUrl(slug) {
   return `${origin}/blog/${encodeURIComponent(slug)}/`
 }
 
+function oneLine(value) {
+  return String(value ?? '').replace(/\s+/g, ' ').trim()
+}
+
+export function createLlmsTxt(posts) {
+  const articles = [...posts]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((post) => {
+      const title = oneLine(post.title).replace(/\\/g, '\\\\').replace(/[\[\]]/g, '\\$&')
+      return `- [${title}](${postUrl(post.slug)}index.md): ${oneLine(post.excerpt)}`
+    })
+  return `# 6A Logic\n\n> 6A Logic builds data infrastructure, workflow automation, and system integrations for small and mid-sized businesses.\n\n## Site\n\n- [Homepage](${origin}/): Overview of 6A Logic and its services.\n- [Blog](${origin}/blog/): Articles on data infrastructure, AI operations, and automation.\n\n## Articles\n\n${articles.join('\n')}\n`
+}
+
 function setPageMeta(template, { title, description, canonical, type = 'website' }) {
   const safeTitle = escapeHtml(title)
   const safeDescription = escapeHtml(description)
@@ -78,7 +92,7 @@ export function createPostHtml(template, post) {
     </article></main></div>`
   const html = setPageMeta(template, {
     title, description: post.excerpt, canonical: postUrl(post.slug), type: 'article',
-  }).replace('</head>', `${date ? `  <meta property="article:published_time" content="${date}" />\n` : ''}  </head>`)
+  }).replace('</head>', `  <link rel="alternate" type="text/markdown" href="${postUrl(post.slug)}index.md" />\n  <link rel="describedby" href="${origin}/llms.txt" />\n${date ? `  <meta property="article:published_time" content="${date}" />\n` : ''}  </head>`)
   return setBody(html, body)
 }
 
@@ -130,12 +144,14 @@ async function main() {
   const dist = join(root, 'dist')
   const template = await readFile(join(dist, 'index.html'), 'utf8')
   await writeFile(join(dist, 'sitemap.xml'), createSitemap(posts), 'utf8')
+  await writeFile(join(dist, 'llms.txt'), createLlmsTxt(posts), 'utf8')
   await mkdir(join(dist, 'blog'), { recursive: true })
   await writeFile(join(dist, 'blog', 'index.html'), createBlogIndexHtml(template, posts), 'utf8')
   for (const post of posts) {
     const directory = join(dist, 'blog', post.slug)
     await mkdir(directory, { recursive: true })
     await writeFile(join(directory, 'index.html'), createPostHtml(template, post), 'utf8')
+    await writeFile(join(directory, 'index.md'), `${post.content.trim()}\n`, 'utf8')
   }
 }
 

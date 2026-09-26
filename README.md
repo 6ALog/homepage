@@ -8,6 +8,10 @@ each post at `dist/blog/<filename>/index.html` and a blog index at
 200 and article content before JavaScript runs. Vite copies `public/robots.txt`
 to `dist/robots.txt`.
 
+The build also generates `dist/llms.txt` with a site overview and links to
+Markdown copies of the articles at `dist/blog/<filename>/index.md`. Its article
+list updates automatically when posts are added or removed.
+
 To publish a blog post, add its `.md` file to `posts/` with a `date: YYYY-MM-DD`
 frontmatter field. The next build includes its `/blog/<filename>/` URL in the
 sitemap and creates its HTML page. If you substantially revise a post, add

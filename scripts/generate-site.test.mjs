@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { createBlogIndexHtml, createPostHtml, createSitemap } from './generate-site.mjs'
+import { createBlogIndexHtml, createLlmsTxt, createPostHtml, createSitemap } from './generate-site.mjs'
 
 test('includes static pages and every blog post with meaningful dates', () => {
   const xml = createSitemap([
@@ -43,4 +43,14 @@ test('blog index HTML links to post directory pages', () => {
   ])
   assert.match(html, /href="\/blog\/test-post\/"/)
   assert.match(html, /<link rel="canonical" href="https:\/\/6alogic.com\/blog\/"/)
+})
+
+test('llms.txt includes the site and Markdown links for new posts', () => {
+  const content = createLlmsTxt([
+    { slug: 'new-post', title: 'New [Post]', excerpt: 'A useful\nsummary.' },
+  ])
+  assert.match(content, /^# 6A Logic\n/)
+  assert.match(content, /\[Homepage\]\(https:\/\/6alogic.com\/\)/)
+  assert.match(content, /\[Blog\]\(https:\/\/6alogic.com\/blog\/\)/)
+  assert.ok(content.includes(String.raw`[New \[Post\]](https://6alogic.com/blog/new-post/index.md): A useful summary.`))
 })
