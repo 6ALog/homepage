@@ -12,7 +12,7 @@ export const nav = {
       ],
     },
     { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Blog',         href: '/blog' },
+    { label: 'Blog',         href: '/blog/' },
     { label: 'Contact',      href: '/contact' },
   ],
   cta: 'Book a Consultation',
@@ -509,7 +509,7 @@ export const footer = {
     { label: 'Use Cases',         href: '/how-it-works#use-cases' },
     { label: 'How It Works',      href: '/how-it-works' },
     { label: 'AI Infrastructure', href: '/technology#ai-infrastructure' },
-    { label: 'Blog',              href: '/blog' },
+    { label: 'Blog',              href: '/blog/' },
     { label: 'Contact',           href: '/contact' },
   ],
   tickerItems: [

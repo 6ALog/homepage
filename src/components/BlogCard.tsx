@@ -16,7 +16,7 @@ export function BlogCard({ post, index }: { post: Post; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.08 }}
     >
       <Link
-        to={`/blog/${post.slug}`}
+        to={`/blog/${post.slug}/`}
         className="blog-card-link block rounded-xl p-6 h-full transition-all duration-200 hover:border-brand-cyan/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan group"
         style={{
           background: 'rgba(15,23,42,0.6)',

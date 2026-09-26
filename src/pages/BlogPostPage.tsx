@@ -28,7 +28,7 @@ export function BlogPostPage() {
     }
   }, [post])
 
-  if (!post) return <Navigate to="/blog" replace />
+  if (!post) return <Navigate to="/blog/" replace />
 
   const date = post.date
     ? new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
@@ -47,7 +47,7 @@ export function BlogPostPage() {
           className="mb-10"
         >
           <Link
-            to="/blog"
+            to="/blog/"
             className="font-mono text-xs tracking-wider uppercase text-brand-textDim hover:text-brand-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded"
           >
             ← All Posts
